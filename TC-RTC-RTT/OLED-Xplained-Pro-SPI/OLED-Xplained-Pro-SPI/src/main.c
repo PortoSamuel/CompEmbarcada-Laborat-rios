@@ -312,7 +312,7 @@ int main(void){
 	// gfx_mono_draw_string("mundo", 50,16, &sysfont);
 	
 	rtc_get_time(RTC, &pul_hour, &pul_minute, &pul_second);
-	sprintf(str, "%d:%d:%d", pul_hour, pul_minute, pul_second);
+	sprintf(str, "%d :%d :%d ", pul_hour, pul_minute, pul_second);
 	gfx_mono_draw_string(str, 0,16, &sysfont);
 
 	/* Disable the watchdog */
@@ -366,7 +366,7 @@ int main(void){
 			pisca_led(5, 100);
 		}
 		
-		tempo += 10;
+		tempo += 5;
 		
 		// RTC_init(RTC, ID_RTC, rtc_initial, RTC_IER_ALREN);
 		rtc_set_date_alarm(RTC, 1, rtc_initial.month, 1, rtc_initial.day);
@@ -377,7 +377,7 @@ int main(void){
 	
 	if(segundo){
 		rtc_get_time(RTC, &pul_hour, &pul_minute, &pul_second);
-		sprintf(str, "%d:%d:%d", pul_hour, pul_minute, pul_second);
+		sprintf(str, "%d :%d :%d ", pul_hour, pul_minute, pul_second);
 		gfx_mono_draw_string(str, 0,16, &sysfont);
 		
 		segundo = 0;

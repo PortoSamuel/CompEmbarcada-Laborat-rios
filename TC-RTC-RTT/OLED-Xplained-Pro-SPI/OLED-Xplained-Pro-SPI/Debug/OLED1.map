@@ -8011,8 +8011,7 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
                 0x004066e4      0xa48 src/oled/sysfont.o
  .rodata        0x0040712c       0x1c src/main.o
  .rodata.main.str1.4
-                0x00407148        0x9 src/main.o
- *fill*         0x00407151        0x3 
+                0x00407148        0xc src/main.o
  .rodata._global_impure_ptr
                 0x00407154        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libc.a(lib_a-impure.o)
                 0x00407154                _global_impure_ptr

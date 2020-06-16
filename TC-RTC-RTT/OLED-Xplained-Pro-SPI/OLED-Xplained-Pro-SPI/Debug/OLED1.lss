@@ -4749,7 +4749,7 @@ int main(void){
   401b58:	4638      	mov	r0, r7
   401b5a:	f8df 9260 	ldr.w	r9, [pc, #608]	; 401dbc <main+0x28c>
   401b5e:	47c8      	blx	r9
-	sprintf(str, "%d:%d:%d", pul_hour, pul_minute, pul_second);
+	sprintf(str, "%d :%d :%d ", pul_hour, pul_minute, pul_second);
   401b60:	f8d8 3000 	ldr.w	r3, [r8]
   401b64:	6822      	ldr	r2, [r4, #0]
   401b66:	4c75      	ldr	r4, [pc, #468]	; (401d3c <main+0x20c>)
@@ -4850,7 +4850,7 @@ int main(void){
   401bfe:	4f5e      	ldr	r7, [pc, #376]	; (401d78 <main+0x248>)
 		}
 		
-		tempo += 10;
+		tempo += 5;
 		
 		// RTC_init(RTC, ID_RTC, rtc_initial, RTC_IER_ALREN);
 		rtc_set_date_alarm(RTC, 1, rtc_initial.month, 1, rtc_initial.day);
@@ -4967,8 +4967,8 @@ int main(void){
   401ca8:	2005      	movs	r0, #5
   401caa:	4b42      	ldr	r3, [pc, #264]	; (401db4 <main+0x284>)
   401cac:	4798      	blx	r3
-		tempo += 10;
-  401cae:	f108 080a 	add.w	r8, r8, #10
+		tempo += 5;
+  401cae:	f108 0805 	add.w	r8, r8, #5
 		rtc_set_date_alarm(RTC, 1, rtc_initial.month, 1, rtc_initial.day);
   401cb2:	2313      	movs	r3, #19
   401cb4:	9300      	str	r3, [sp, #0]
@@ -5005,7 +5005,7 @@ int main(void){
   401cf0:	4811      	ldr	r0, [pc, #68]	; (401d38 <main+0x208>)
   401cf2:	f8df a0c8 	ldr.w	sl, [pc, #200]	; 401dbc <main+0x28c>
   401cf6:	47d0      	blx	sl
-		sprintf(str, "%d:%d:%d", pul_hour, pul_minute, pul_second);
+		sprintf(str, "%d :%d :%d ", pul_hour, pul_minute, pul_second);
   401cf8:	f8d9 3000 	ldr.w	r3, [r9]
   401cfc:	6822      	ldr	r2, [r4, #0]
   401cfe:	4c0f      	ldr	r4, [pc, #60]	; (401d3c <main+0x20c>)
@@ -12326,7 +12326,7 @@ int main(void){
   407118:	0010 0020 0010 0010 0020 0010 0010 0020     .. ..... ..... .
   407128:	0000 0000 07e2 0000 0003 0000 0013 0000     ................
   407138:	000c 0000 000f 0000 002d 0000 0001 0000     ........-.......
-  407148:	6425 253a 3a64 6425 0000 0000               %d:%d:%d....
+  407148:	6425 3a20 6425 3a20 6425 0020               %d :%d :%d .
 
 00407154 <_global_impure_ptr>:
   407154:	0028 2040 4e49 0046 6e69 0066 414e 004e     (.@ INF.inf.NAN.
