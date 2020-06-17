@@ -47,9 +47,9 @@ uint32_t pul_minute;
 uint32_t pul_second;
 char str[20];
 volatile char segundo = 0;
-volatile char flag_lad1 = 0;
-volatile char flag_lad2 = 0;
-volatile char flag_lad3 = 0;
+volatile char flag_led1 = 0;
+volatile char flag_led2 = 0;
+volatile char flag_led3 = 0;
 volatile char flag_led = 0;
 volatile Bool f_rtt_alarme = false;
 
@@ -89,7 +89,7 @@ void TC1_Handler(void){
 	UNUSED(ul_dummy);
 
 	/** Muda o estado do LED */
-	flag_lad1 = 1;
+	flag_led1 = 1;
 }
 
 void TC4_Handler(void){
@@ -104,7 +104,7 @@ void TC4_Handler(void){
 	UNUSED(ul_dummy);
 
 	/** Muda o estado do LED */
-	flag_lad2 = 1;
+	flag_led2 = 1;
 }
 
 void RTT_Handler(void)
@@ -323,7 +323,7 @@ int main(void){
 
   /** Configura timer TC0, canal 1 */
 	TC_init(TC0, ID_TC1, 1, 4);
-	TC_init(TC1, ID_TC4, 1, 5);
+	TC_init(TC1, ID_TC4, 1, 10);
 	
 	/** Configura RTC */
 	calendar rtc_initial = {2018, 3, 19, 12, 15, 45 ,1};
@@ -335,14 +335,14 @@ int main(void){
 	rtc_set_time_alarm(RTC, 1, rtc_initial.hour, 1, rtc_initial.minute, 1, rtc_initial.seccond + tempo);
   
 	while (1)	{
-    if(flag_lad1){
+    if(flag_led1){
       pin_toggle(LED1_PLACA_PIO, LED1_PLACA_IDX_MASK);
-      flag_lad1 = 0;
+      flag_led1 = 0;
     }
 	
-	if(flag_lad2){
+	if(flag_led2){
 		pin_toggle(LED2_PLACA_PIO, LED2_PLACA_IDX_MASK);
-		flag_lad2 = 0;
+		flag_led2 = 0;
 	}
 	
 	if (f_rtt_alarme){

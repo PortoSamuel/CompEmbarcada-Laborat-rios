@@ -7123,7 +7123,7 @@ Discarded input sections
                 0x00000000        0x4 src/main.o
  .bss.cpu_irq_prev_interrupt_state
                 0x00000000        0x1 src/main.o
- .bss.flag_lad3
+ .bss.flag_led3
                 0x00000000        0x1 src/main.o
  .debug_macro   0x00000000      0x8ce src/main.o
  .debug_macro   0x00000000      0x16d src/main.o
@@ -8180,14 +8180,14 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
  .bss.f_rtt_alarme
                 0x20400c70        0x1 src/main.o
                 0x20400c70                f_rtt_alarme
- .bss.flag_lad1
-                0x20400c71        0x1 src/main.o
-                0x20400c71                flag_lad1
- .bss.flag_lad2
+ .bss.flag_led  0x20400c71        0x1 src/main.o
+                0x20400c71                flag_led
+ .bss.flag_led1
                 0x20400c72        0x1 src/main.o
-                0x20400c72                flag_lad2
- .bss.flag_led  0x20400c73        0x1 src/main.o
-                0x20400c73                flag_led
+                0x20400c72                flag_led1
+ .bss.flag_led2
+                0x20400c73        0x1 src/main.o
+                0x20400c73                flag_led2
  .bss.segundo   0x20400c74        0x1 src/main.o
                 0x20400c74                segundo
  *fill*         0x20400c75        0x3 
@@ -9080,10 +9080,10 @@ exception_table                                   src/ASF/sam/utils/cmsis/same70
 exit                                              c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libc.a(lib_a-exit.o)
                                                   c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/crt0.o
 f_rtt_alarme                                      src/main.o
-flag_lad1                                         src/main.o
-flag_lad2                                         src/main.o
-flag_lad3                                         src/main.o
 flag_led                                          src/main.o
+flag_led1                                         src/main.o
+flag_led2                                         src/main.o
+flag_led3                                         src/main.o
 free                                              c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libc.a(lib_a-__call_atexit.o)
 g_interrupt_enabled                               src/ASF/common/utils/interrupt/interrupt_sam_nvic.o
                                                   src/ASF/sam/utils/cmsis/same70/source/templates/gcc/startup_same70.o
